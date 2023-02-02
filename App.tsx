@@ -3,9 +3,10 @@ import { ActivityIndicator } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { useFonts,Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import theme from '@theme/';
-import { NewGroup } from '@screens/newGroup';
+import { Routes } from './src/routes';
+import { NewGroup } from '@screens/NewGroup';
 import { Groups } from '@screens/Groups'
-import { Players } from '@screens/players'
+import { Players } from '@screens/Players'
 
 export default function App() {
   const [fontsLoaded] = useFonts({Roboto_400Regular, Roboto_700Bold})
@@ -13,7 +14,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
         <StatusBar barStyle='light-content' translucent backgroundColor="transparent"></StatusBar>
-        {fontsLoaded ? <Groups /> : <ActivityIndicator/> }
+        {fontsLoaded ? <Routes /> : <ActivityIndicator/> }
     </ThemeProvider>
   );
 }
